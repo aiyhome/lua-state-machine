@@ -225,10 +225,12 @@ end
 
 function StateMachine:onInvalidTransition(transition, from, to)
   print("transition is invalid in current state", transition, from, to, self.state)
+  assert(false, 'invalid transition')
 end
 
 function StateMachine:onPendingTransition(transition, from, to)
   print("transition is invalid while previous transition is still in progress", transition, from, to, self.state)
+  assert(false, 'pending transition')
 end
 
 return StateMachine
